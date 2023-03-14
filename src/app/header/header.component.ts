@@ -9,16 +9,17 @@ export class HeaderComponent implements OnInit {
 
   missionName: string = "Mars 2030";
   rocketName: string = "Plasma Max";
-  editingMission: boolean = false;
+  missionEdit: boolean = false;
+  rocketEdit: boolean = false;
   
   constructor() { }
 
   ngOnInit() {
   }
 
-  updateMission(updatedName: string) {
-    this.missionName = updatedName;
-    this.editingMission = false;
+  updateText(textType: string,updatedName: string) {
+    this[`${textType}Name`] = updatedName;
+    this[`${textType}Edit`] = false;
   }
 
 }
